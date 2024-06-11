@@ -2,11 +2,13 @@
 
 Some template I built up, this includes:
 
-* Vite: The build tool
-* React: The FE framework
-* TypeScript: The main programming language
-* ESLint: linter to help writing consistent code
-* Prettier: formatter to speed up development and prevent annoying merge conflicts
+* [Vite](https://vitejs.dev/): The build tool
+* [React](https://react.dev/): The FE framework
+* [TypeScript](https://www.typescriptlang.org/): The main programming language
+* [ESLint](https://eslint.org/): linter to help writing consistent code
+* [Prettier](https://prettier.io/): formatter to speed up development and prevent annoying merge conflicts
+
+Note that both the `eslint` and `prettier` packages are included in the `prettier-eslint` package which is why they are not listed in `package.json`.
 
 ## Tooling
 
