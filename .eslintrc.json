@@ -35,18 +35,21 @@
     "import/named": "off", // Good rule but doesn't see renames directly which is pretty annoying, also TS will help us anyway
     "import/namespace": "off", // Seems to be giving false positives, also gives false positives
     "import/no-unresolved": "off", // TS warns us about unresolvable imports
-    "import/order": ["warn", {
-      "groups": [
-        ["builtin", "external"], // All nodes_modules imports
-        "internal", // TS-config alias paths
-        ["parent", "index"], // First parents, not too sure about the index files
-        "sibling", // Then siblings
-        "object", // Probably never used, e.g. import log = import.log
-        "unknown"  // Whatever else?
-      ],
-      "alphabetize": { "order": "asc", "caseInsensitive": true }, // Always alphabetize each group by path, makes PR's a lot easier
-      "warnOnUnassignedImports": true // We should not have import code that is dependent on side-effects and their order, so import '...'; is also checked
-    }],
+    "import/order": [
+      "warn",
+      {
+        "pathGroups": [
+          {
+            "pattern": "~*/**",
+            "group": "parent",
+            "position": "before"
+          }
+        ],
+        "groups": [["builtin", "external"], ["parent", "sibling"], "index"],
+        "alphabetize": { "order": "asc", "caseInsensitive": true }, // Always alphabetize each group by path, makes PR's a lot easier
+        "warnOnUnassignedImports": true // We should not have import code that is dependent on side-effects and their order, so import '...'; is also checked
+      }
+    ],
     "indent": ["warn", 2, { "SwitchCase": 1 }], // Indentation should be 2
     "no-constant-condition": ["warn", { "checkLoops": false }], // Good rule, but constants in loops are fine
     "no-empty-pattern": "warn", // Fine, but shouldn't be an error
