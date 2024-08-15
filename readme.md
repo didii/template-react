@@ -8,14 +8,11 @@ Some template I built up, this includes:
 * [ESLint](https://eslint.org/): linter to help writing consistent code
 * [Prettier](https://prettier.io/): formatter to speed up development and prevent annoying merge conflicts
 
-Note that both the `eslint` and `prettier` packages are included in the `prettier-eslint` package which is why they are not listed in `package.json`.
-
 ## Tooling
 
 I recommend VSCode with the following extensions in order of importance:
 
-* [Prettier ESLint](https://marketplace.visualstudio.com/items?itemName=rvest.vs-code-prettier-eslint): It is set as the default formatter for TS and TSX files and runs first prettier, then eslint.
-  * Note: if the extension crashes, reload the window to restart it. This can happen if the config is wrong.
+* [Format Code Action](https://marketplace.visualstudio.com/items?itemName=rohit-gohri.format-code-action): Allows the command `source.formatDocument` in the `editor.codeActionsOnSave` so we can specify the order in which these occur
 * [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint): Show ESLint errors
 * [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker): Simple and effective spell checker
 * [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens): Show errors and warnings inline
@@ -30,6 +27,6 @@ Included plugins:
 
 * React: adds some helpful warnings here and there like forgetting a `key` attribute inside a `map`
 * React-hooks: probably the most important one to make sure your dependency array is up-to-date. Never ignore that rule unless you know what you are doing.
-* Import: Checks import order of the imports and auto-fixes them.
+* Prettier: removes all formatting rules from eslint since this is prettier's job
 
 Have fun!
