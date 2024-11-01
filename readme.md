@@ -8,6 +8,22 @@ Some template I built up, this includes:
 * [ESLint](https://eslint.org/): linter to help writing consistent code
 * [Prettier](https://prettier.io/): formatter to speed up development and prevent annoying merge conflicts
 
+## Getting started
+
+### Updating packages
+
+When you have the code, make sure all packages are up-to-date.
+For example, use `npm-check` in UI mode to easily update all packages.
+Note that at the time of writing, the eslint plugin for react doesn't work yet for eslint 9.x, so refrain from updating eslint for now.
+Simply run: `npx npm-check -u` and select all packages you want to upgrade with `space` and submit with `enter`.
+
+### Start coding
+
+As is usual with Vite, the `index.html` is the starting point which refers to `./src/index.tsx`.
+This will mount the React app and instantiate the component defined in `./src/App.tsx`.
+
+Everything else is up to you!
+
 ## Tooling
 
 I recommend VSCode with the following extensions in order of importance:
